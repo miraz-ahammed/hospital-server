@@ -200,16 +200,10 @@ async function run() {
   }
 }
 run();
-
 // টেস্ট রুট
 app.get('/', (req, res) => {
   res.send('Hospital server is running');
 });
-
-
-
-
-
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
