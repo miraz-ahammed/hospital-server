@@ -208,22 +208,7 @@ app.get('/', (req, res) => {
 
 
 
-    // শুধু ডেভেলপমেন্টে ডেটা সিড করার জন্য (কাজ শেষে মুছে ফেলবে)
-    app.post('/seed/departments', async (req, res) => {
-      const data = [
-        { name: 'Cardiology', description: 'Heart Care', icon: 'heart' },
-        { name: 'Neurology', description: 'Brain & Nerves', icon: 'brain' },
-        { name: 'Orthopedics', description: 'Bone & Joint', icon: 'bone' },
-        { name: 'Pediatrics', description: 'Child Care', icon: 'baby' },
-        { name: 'Gynecology', description: "Women's Health", icon: 'female' },
-        { name: 'Oncology', description: 'Cancer Care', icon: 'ribbon' },
-        { name: 'Internal Medicine', description: 'General Medicine', icon: 'stethoscope' },
-        { name: 'Emergency', description: '24/7 Emergency', icon: 'ambulance' },
-      ].map((d) => ({ ...d, createdAt: new Date() }));
 
-      const result = await departments.insertMany(data);
-      res.send(result);
-    });
 
 
 app.listen(port, () => {
